@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikinlapak</title>
+    <!-- 1. Menambahkan Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menambahkan Heroicons untuk ikon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* Menambahkan sedikit custom style jika diperlukan */
+        body {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+Generated code
+<!-- ======================= HEADER ======================= -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="text-2xl font-bold text-red-600">bikinlapak</a>
+        
+        <!-- Search Bar -->
+        <div class="flex-grow mx-8">
+            <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2">
+                    <ion-icon name="search-outline" class="text-gray-400"></ion-icon>
+                </span>
+                <input type="text" placeholder="Cari di Bikinlapak" class="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+            </div>
+        </div>
+
+        <!-- Icons & Buttons -->
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-gray-600 hover:text-red-600">
+                <ion-icon name="cart-outline" class="text-2xl"></ion-icon>
+            </a>
+            <div class="border-l h-8 border-gray-300"></div>
+            <button class="px-4 py-2 border border-red-600 text-red-600 rounded-lg font-semibold hover:bg-red-50">Login</button>
+            <button class="px-4 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700">Daftar</button>
+        </div>
+    </div>
+</header>
+
+<!-- ======================= MAIN CONTENT ======================= -->
+<main class="container mx-auto px-4 mt-8">
+
+    <!-- 1. Hero Banner Section -->
+    <section class="mb-8">
+        <div class="bg-blue-500 rounded-lg overflow-hidden">
+            <img src="images/banner.png" alt="Promo Banner" class="w-full h-auto">
+        </div>
+    </section>
+
+    <!-- 2. Kategori Pilihan Section -->
+    <section class="bg-white p-6 rounded-lg shadow-sm mb-8">
+        <h2 class="text-xl font-bold mb-4">Kategori Pilihan</h2>
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-4 text-center">
+            <!-- Item Kategori -->
+            <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-red-100 p-3 rounded-full"><ion-icon name="phone-portrait-outline" class="text-2xl text-red-600"></ion-icon></div>
+                <span class="text-sm font-medium">Pulsa & Data</span>
+            </a>
+            <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-blue-100 p-3 rounded-full"><ion-icon name="flash-outline" class="text-2xl text-blue-600"></ion-icon></div>
+                <span class="text-sm font-medium">Listrik</span>
+            </a>
+            <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-green-100 p-3 rounded-full"><ion-icon name="game-controller-outline" class="text-2xl text-green-600"></ion-icon></div>
+                <span class="text-sm font-medium">Voucher Game</span>
+            </a>
+            <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-yellow-100 p-3 rounded-full"><ion-icon name="cash-outline" class="text-2xl text-yellow-600"></ion-icon></div>
+                <span class="text-sm font-medium">Investasi</span>
+            </a>
+             <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-purple-100 p-3 rounded-full"><ion-icon name="medkit-outline" class="text-2xl text-purple-600"></ion-icon></div>
+                <span class="text-sm font-medium">Kesehatan</span>
+            </a>
+            <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-indigo-100 p-3 rounded-full"><ion-icon name="airplane-outline" class="text-2xl text-indigo-600"></ion-icon></div>
+                <span class="text-sm font-medium">Travel</span>
+            </a>
+            <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-pink-100 p-3 rounded-full"><ion-icon name="woman-outline" class="text-2xl text-pink-600"></ion-icon></div>
+                <span class="text-sm font-medium">Fashion</span>
+            </a>
+            <a href="#" class="flex flex-col items-center space-y-2 hover:text-red-600">
+                <div class="bg-gray-200 p-3 rounded-full"><ion-icon name="ellipsis-horizontal-outline" class="text-2xl text-gray-700"></ion-icon></div>
+                <span class="text-sm font-medium">Lainnya</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. Product Grid Section -->
+    <section>
+        <h2 class="text-xl font-bold mb-4">Rekomendasi Untukmu</h2>
+        <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <!-- Kartu produk akan di-generate oleh JavaScript -->
+        </div>
+    </section>
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="bg-white mt-12 py-8 border-t">
+    <div class="container mx-auto px-4 text-center text-gray-600">
+        <p>© 2025 Bikinlapak. Dibuat dengan HTML, Tailwind CSS, dan JavaScript.</p>
+    </div>
+</footer>
+
+<!-- ======================= JAVASCRIPT ======================= -->
+<script>
+    // Data produk dummy (dalam aplikasi nyata, ini berasal dari API)
+    const products = [
+        { id: 1, name: 'iPhone 15 Pro 256GB Garansi Resmi', price: '18.499.000', image: 'https://img.freepik.com/free-psd/iphone-15-pro-mockup-front-back-view_1332-60588.jpg?t=st=1751357378~exp=1751360978~hmac=518405812527137746ec28becf5b145950ad716aa7dc79c88667bdf410e3d101&w=826', location: 'Jakarta' },
+        { id: 2, name: 'Sepatu Lari Pria Adidas Ultraboost', price: '2.500.000', image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMREhUTEhIVFRUXFRUWGBcYFRgWFRcXFRUWFhUVFRgbHSggGBolHRcXITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OFRAQGi0dHR0tLTUtKystNy0rLi03LSstNy0rKystLSstLSs1KzAtOC0tMistNys3KzctKzc3KystLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwIDBAUGAQj/xABLEAACAQICBgcDBgkJCQAAAAAAAQIDEQQhBQYHEjFhE0FRcYGRoSIysUJicoLB8BQjM0NSktHT4RckRFNUk6LC8RUWY3OUo7Kz0v/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAdEQEBAQEBAQEAAwAAAAAAAAAAARECEiETAzFB/9oADAMBAAIRAxEAPwCcQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMXSWPp4elOtVkowhFyk+xL4vkBlA+fdPbX8bVqfzdxoU08koqcpK/wAtyT6upJeJImzHX3/aKlSr7scRBb3s5KpDhvJXyafFLLNPrsreaO+ABALdeqoRlJ8Ixcn3JXZcOI2yYidPRdXo21vSpQlb9CU0pLufDxEEaY/arjZ4h1aU1Tp39mi4xlBR7J5Xb7XdcrEnarbQqOKhHpbU5OybzcN6yus816rmfN++b/VTHuNWMG5bk5KLXVeTUVKzVnZnTrn58XjNzp9Rwkmrp3T4NcCoh7HVMdoitR6Gv+EQrTa6GStHeuvZS3nuZP3k1zJGracUFT39yE52Sg5p+217qllfvM+amxuwUUam9FO1rrh2cisyAAAAAAAAAAAAAAAAAAAAAAyIdu2sSUKeChLOTVSql+ivycX3vP6qJbrVVCLlJ2UU22+CSV2z5U1t0m8Via2Ify6kmvoXtDySRZNrfPyWtHc2urulp4SvSxFN+1Tknb9JcJRfJq68TUsrhJp3R1c313ofSdPFUYVqUt6E4prl2p9jTyaM0+VdA604jCP+b150ru7jdbrfa4yTi/FHaYTa9jor24UKnNxab792aXoY8Gp2OL2t46jDRuIp1KkYzqQtTi37U5RkpJRXHq49RGelNrmPqLdhKlR504Xl/icreRwmkNI1K83UqzlOb4znJyk/Ficqx6FBv7/e7Og1eUY4nD3/AK6m/Kaeb8DRwrZZZNKz7u1faOmtn/A6REgbUtIRq1qUG77lOTyfBzl1+EUcbOtUdrVZPd9y7u4O90434Z9hg1cRKTu878W+L7+tl/D1Fbs/aVH0JhtbnTwmErSpSnLEdDHci0mp1Y3yv1XNpHWiEaqpVo9FN2ybTVpO0XvLK18iC9L61utQoUIrdjSjG97ZuEVFNcuL8S1gtaMRSk6kak97dUXvSclKMbuKafVm/MnnnPsH0xc9I6raxTw08NUpyiqdZJTpStubzUWpRm2lS4u74PsudPQ1pouqqM3uVHbJtWzV4+0smn1HO/x3+11vgLgwoAAAAAAAAAAAAAAADgdsWmugwfQxftV24v8A5aV5+eUfFnz/AFZXZI22vGueO3L5U6UElzlebfrHyI2bN8T411fkjFlGzseJl6rAoVM2wKZ6muxHjgu4oasBccuwpueRV8lxbsl2t8EuZ2mruz2tWtPEN0abz3bfjWu55Q8c+QHI4bDzqSUKcZTm+EYpuT7kiQNXNmspWnjJbq49FB3k+U58I90b953WhdCUMJHdoU1G/GXGcvpSeb7uBc0xpuhhI71aoo9keMpfRjxZYmtdjNR8DUio/g8YWVlKneEvF/Kf0rkba4auUcDK1PFdJJvOm17cV2yccvNLiZ2se0OvXvDD3o0+F0/xrXOS93wz5nP6E0DiMbO1GDln7U5ZQi3xcpdvJXYGujVa6/gvUv4fEbt08/NkvasaiYfC2nNKtVXypL2Iv5kX183d9xtdPaLwdSDqYunSslnUklGS+urS8LlEO1NL1KkYQlUvGCtFNqyVrd7yVjfam6zyoVFCUlOhOSjVhKN42a3VK0uFsvBHOaxSwvS/zNVOjXXN3u+2HWo9+ZY0Zgq1eTjQpznJK7UVey59SJom6Ok6WFxEOjxs6NOftOlJKrQVrK0breo37U7ZPI3lPXem8VTwzjZVY71Kp+bqNX3oxlwby9T50q1KtKW5UjKEuySlGS8GbDQemlSqUnUvKNOrGqlfri07rn9hmyK+pqc1JXRWQNp7aDWnVhUwdadJRjaV7bs3dtXi7p2v35mTo3bFioZV6VKqu1b1KXjxXojPimpwBHWjdr+CnlVp1qT7bKcfOLv6HV6M1swWIsqWKpSb+S5KM/1ZWfoZssVugeJnpAAAAAAAwa7SGkVC8Y5y9F/EslogvazRl/tCvPde77FnbLKnBOzODl3n0bNyXWzBxOFpz9+lSn9KnF/FHac5Et2vn0XJyqauYKXHCUfCG78DHr6o4CXHCxX0Zzj8JF8pqE2U2JllqNo9/mJrmqs/tZi1dnOCfCdeP1ov4xJ5pqONXdOTwNTpIU6c75e3H2kvmy4wvy5EjaJ2jYWplWUqMua34+DSv5o12K2YL81i/CpT+2L+w02M2bYuGdN0qnKNTdflJJeoynxtNYtpLd4YONurpZrP6kervfkcHKdXE1c9+rVm+cpyfYvvkZ2M1VxtJXnhav1Y9IvHcbsU6A0/WwM5Olu3lZSU43bSvl1NdfWFdnqzs54VMY+xqjF/+yS+EfMkbCYeFOKhTjGEIqyjFJRS5JEf6N2n03lXoSi+2D3l5OzXqc/rPr5WxN4Ur0qXCyftyXzpLh3L1CY7rWbXyhhbwp2rVVlZP2Iv58uvuXoRbpnTlfGTTrTc3e0YJWim8koQXX1dbZ5q/q/Xxs92jHJW3pvKEL9r63yRLuq+qVDBJSit+rbOrJZ81BfIXr2sDj9WdnFSrapi26cOPRr8pJfOfyO7j3En6N0dSw8FTo04wguqK9W+LfN5lnSWlKWGpupWmoRXbxb7Iri3yRFutG0KtiL08PejS4XT/GTXOXyVyXmB2uuWteDoRdKpCGJqf1TSlGL+e2mo9yzIaxdZTnKShGCk7qMU1GPKKfUWXIqhBvgQexkVb5dhhe1+RkRoxXV9oGIplW+XqmFTzWTLUcM+tpFGz0brHisP+RxFWml1Rm939X3X5HU6K2s6QptKcoVl86mlLzhb4HEwoRXHMu9IkssiZFTlq1tOo4iSp14dDKTspXvTb7G+MfHLmd+fJvT2Jo2N6enWhVw9ScpOmoTjvNtqMrpxTfUmllzMdc/6JKB4DCsTS2MVGlKbaXBJvJXlJRivNo5hVPH0Zm7SMFKto7ERhnKMVUS7VTkpyXkmcDqZrVHEwVKpJdLFWV/ziS4r53avE7fx4ldi5fdr7SiUb9XkW1P7p/tPd7v8r+qOqPJUl2lHQMu9Jz9Wvieb65en7UUWXSZ5usvt/fP+J45ogtbrKZQK6mJSV7FH4UvvZ/aB4ros4vDQqq1WnCovnwjL4ouvGR/1yfkz1YiL6wNBitSsBU/MdG+2nOUfS7XoaXF7MKLv0WJnHlOCmvONju00VJEyCMY6gaQw8t7DYim/oVZUpO3amrPzMuGkdOYZe3QnVS/4aq+tJ3JEUSpXHmCBNOYzE1qjnilU3uCU4SgorsjFpWRrY5n0h0j63fvzMXEaPoVPymHoz+lSg352uZ8mvn+EV3mRGoTPW1RwE+OEgvoOcPgzBqbPtHvhGtHuq3/8kx5q6ihVD3pCT57N8G+FTEL61N/5Cqns6wS4zxEvrwXwgMqaix1Sl1iW3s/wH6Nb+9/gVQ1F0evzM5fSqz+xomU1D7qMU1KTtFOT7Em35ImyhqvgYe7hKf1k5v8AxNnukdMYbAwz3KeXs04JKUuSivi8hhqGqmBrU7Sq0qlOLeTnCUE3a9lvLMkbYRNvGV3Z26Dj1L8ZC32+pwmsOnK2OrJtN3e7Tpxu7X4RilnKT7evyJ22WaovR+G3qqtXrWlUWXsJe7TVuy+fNsx1WnagA5DySurPNHz1tH1Hq6Oq9PQUnhpSvGUb3ovioSfUr8JcrceP0JUTs7Oztkzh9YdV8ZiLr8I3ou63X7rXY0b5ETaH2hVqSUa8VVXU72nbvtmdVhNfMJO29KVN9klL4xujU6R2R427dONPuU7ejRqHsr0quGHi+fS0/tkdJ3iYkClrLhpcMRT/ALxL4mRDS1KXCrB91SDI1ey/S6/onlXoZ/8AcKP5NNL/ANif99Q/eF/QxKTxK5ecC3UxS+9v/ojSOzPTD/ob8a1D94ZENl2mJZOjCP0q9O3kmy/oY7mpi12r0/aYc8dGPyr+bfoX8LqrpeMIw6LDKySzxM+pccqRaxGoml6n5zC0/ozqTfm4Ie4Y8/DObKHjF/pl8DG/kn0i3eWMi3ylIufyT47+1LzkT9IYvw0jbrfiv2GZR0m+Xn/A1q2UaQXDGR85Fa2c6Vh7uKpvvz+MR+kMbylj+Xln8DIjio9bt35fE0tDVTS0Pehh6nNVXB+TjYqxmh9KxX4rB70ueIpKPlvXfoX3ExvFXj2rzK1UXaRbpPUTTlee/Vwrk+C/HULJdkV0mSMaGzrTMc1hJrur0f3g9riXLnjkRStQtOL+j1f+ppfvT3/cLTr/ADFXxxVL96T2YlKdWK4tLvdjXYnWDC0/fxFJct9N+SzI7ey7TE3eWGX1q9J/5mXqeyHSr4woR7637IsXsx1GK1+wUOE5TfzYS+MrI02M2mxX5Kg++ckvRJ/EtUNjGkX79TDx7pyf+RGywmxTEfLxFNdykzPsxyekNeMZWvGMlTT6oKz/AFnd+Ri6P0HUryTrVlTUs3OSdSXjFSTb72iUcFscjH3sR+rCxu8FsvwsPenUl4pIl6GBqRgNE4D2qUnOtbOrUj7efFQSygu7zZIODx1Or7klI1OF1Qw1PhC/ebjC4SFNWhFLuMXFXwAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z', location: 'Bandung' },
+        { id: 3, name: 'Kamera Mirrorless Sony A7IV Body Only', price: '35.999.000', image: 'data:image/jpeg;base64,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', location: 'Surabaya' },
+        { id: 4, name: 'Laptop Gaming ASUS ROG Zephyrus G14', price: '22.750.000', image: 'https://images.tokopedia.net/img/cache/700/OJWluG/2024/1/4/c557db8e-9876-449c-92cf-ac13701c9e1d.jpg', location: 'Jakarta' },
+        { id: 5, name: 'Headphone Sony WH-1000XM5 Noise Cancelling', price: '4.999.000', image: 'https://admin.focusnusantara.com/media/catalog/product/cache/417d5822b01094047ca5b50bfdc0690a/h/s/hsn37137_sony_wh-1000xm5_headphone_noise_cancelling_nirkabel_midnight_blue_-web_d1_1.png', location: 'Yogyakarta' },
+        { id: 6, name: 'Jam Tangan Pria Seiko Prospex', price: '5.200.000', image: 'https://carolinawatch.id/cdn/shop/files/SNE549P11.png?v=1721290159&width=1080', location: 'Medan' },
+        { id: 7, name: 'Kopi Arabika Gayo 250gr Biji Kopi', price: '85.000', image: 'https://id-test-11.slatic.net/p/11f606e6a8a0e1257404d776f33b1a1a.jpg', location: 'Aceh' },
+        { id: 8, name: 'Keyboard Mechanical Keychron K2 v2', price: '1.250.000', image: 'https://www.keychron.id/cdn/shop/products/Keychron-K2-wireless-mechanical-keyboard-for-Mac-Windows-iOS-Gateron-switch-red-with-type-C-RGB-white-backlight-exclusive-color.jpg?v=1661500761', location: 'Jakarta' },
+        { id: 9, name: 'Tas Ransel Eiger 25L Original', price: '450.000', image: 'https://images.tokopedia.net/img/cache/700/VqbcmM/2021/11/25/fff2e251-9fd5-4cd0-a114-a922dfbb4354.jpg', location: 'Bandung' },
+        { id: 10, name: 'Sepeda Gunung Polygon Xtrada 6', price: '5.800.000', image: 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/MTA-24242697/polygon_polygon_xtrada_6_sepeda_mtb_-27-5_-_29_inch-_1x11_speed_full04_t04334er.jpg', location: 'Surabaya' }
+    ];
+
+    // Fungsi untuk me-render produk ke dalam grid
+    function renderProducts() {
+        const grid = document.getElementById('product-grid');
+        grid.innerHTML = ''; // Kosongkan grid terlebih dahulu
+
+        products.forEach(product => {
+            const productCard = `
+                <div class="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-800 text-sm truncate">${product.name}</h3>
+                            <p class="text-lg font-bold text-red-600 mt-2">Rp${product.price}</p>
+                            <div class="flex items-center text-xs text-gray-500 mt-2">
+                                <ion-icon name="location-outline" class="mr-1"></ion-icon>
+                                <span>${product.location}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+            grid.innerHTML += productCard;
+        });
+    }
+
+    // Panggil fungsi saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', renderProducts);
+
+</script>

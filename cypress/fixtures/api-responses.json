@@ -1,0 +1,23 @@
+{
+  "createUserSuccess": {
+    "statusCode": 201,
+    "body": {
+      "id": "555",
+      "name": "Budi dari Fixture",
+      "job": "Tester Hebat",
+      "createdAt": "2023-10-27T08:00:00.000Z"
+    }
+  },
+  "updateUserSuccess": {
+    "statusCode": 200,
+    "body": {
+      "name": "Janet (Diupdate dari Fixture)",
+      "job": "Lead QA",
+      "updatedAt": "2023-10-27T08:05:00.000Z"
+    }
+  },
+  "deleteUserSuccess": {
+    "statusCode": 204,
+    "body": {}
+  }
+}

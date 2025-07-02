@@ -1,4 +1,5 @@
 # Cypress-API Testing Project
+![alt text](image.png)
 
 📁 This is an end-to-end testing project using Cypress, covering UI simulation, API testing, and data-driven form testing.
 
@@ -24,9 +25,6 @@ CYPRESS-API/
 ├── package.json # Project dependencies
 ├── package-lock.json # Dependency lock file
 
-yaml
-Copy
-Edit
 
 ---
 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikasi CRUD User</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #f0f2f5; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .hidden { display: none; }
+        h1, h2 { color: #2c3e50; }
+        input { width: 95%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 15px; border: none; background-color: #3498db; color: white; border-radius: 4px; cursor: pointer; margin-right: 5px; }
+        button.danger { background-color: #e74c3c; }
+        .message { margin-top: 1rem; padding: 1rem; border-radius: 4px; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .success { background-color: #d4edda; color: #155724; }
+        #user-list li { list-style-type: none; padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ==================== HALAMAN LOGIN ==================== -->
+    <div id="login-view" data-cy="view-login">
+        <h1>Silakan Login</h1>
+        <input type="email" placeholder="Email" data-cy="input-login-email">
+        <input type="password" placeholder="Password" data-cy="input-login-password">
+        <button onclick="handleLogin()" data-cy="button-login">Login</button>
+        <div id="login-message" class="message hidden" data-cy="message-login"></div>
+    </div>
+
+    <!-- ==================== HALAMAN DASHBOARD (CRUD) ==================== -->
+    <div id="dashboard-view" class="hidden" data-cy="view-dashboard">
+        <h1>Manajemen User</h1>
+        <button onclick="handleLogout()" class="danger" data-cy="button-logout">Logout</button>
+        <hr>
+
+        <!-- Form Create User -->
+        <h2>Buat User Baru</h2>
+        <input type="text" placeholder="Nama" data-cy="input-create-name">
+        <input type="text" placeholder="Jabatan" data-cy="input-create-job">
+        <button onclick="handleCreateUser()" data-cy="button-create">Buat User</button>
+        
+        <hr>
+
+        <!-- Daftar User -->
+        <h2>Daftar User</h2>
+        <button onclick="fetchUsers()" data-cy="button-fetch-users">Load Daftar User</button>
+        <ul id="user-list" data-cy="user-list"></ul>
+        <div id="dashboard-message" class="message hidden" data-cy="message-dashboard"></div>
+    </div>
+
+</div>
+
+<script>
+    // URL API (Meskipun hanya simulasi, ini penting untuk intercept)
+    const API_URL = 'https://reqres.in/api';
+
+    // === FUNGSI-FUNGSI UNTUK BERINTERAKSI DENGAN API (PALSU) ===
+
+    async function handleLogin() {
+        const email = document.querySelector('[data-cy=input-login-email]').value;
+        const password = document.querySelector('[data-cy=input-login-password]').value;
+        const messageEl = document.getElementById('login-message');
+        
+        try {
+            const response = await fetch(`${API_URL}/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Login gagal!');
+            }
+            
+            // Jika sukses, simpan token (simulasi) dan pindah halaman
+            localStorage.setItem('authToken', data.token);
+            document.getElementById('login-view').classList.add('hidden');
+            document.getElementById('dashboard-view').classList.remove('hidden');
+            messageEl.classList.add('hidden');
+
+        } catch (error) {
+            messageEl.textContent = error.message;
+            messageEl.className = 'message error';
+        }
+    }
+
+    async function fetchUsers() {
+        const listEl = document.getElementById('user-list');
+        listEl.innerHTML = '<li>Loading...</li>';
+        const response = await fetch(`${API_URL}/users`);
+        const data = await response.json();
+        
+        listEl.innerHTML = ''; // Kosongkan list
+        data.data.forEach(user => {
+            const li = document.createElement('li');
+            li.setAttribute('data-cy-user-id', user.id);
+            li.innerHTML = `
+                <span>${user.first_name} ${user.last_name} (${user.email})</span>
+                <div>
+                    <button onclick="alert('Fitur update belum dibuat')" class="update">Update</button>
+                    <button onclick="handleDeleteUser(${user.id})" class="danger">Delete</button>
+                </div>
+            `;
+            listEl.appendChild(li);
+        });
+    }
+
+    async function handleCreateUser() {
+        const name = document.querySelector('[data-cy=input-create-name]').value;
+        const job = document.querySelector('[data-cy=input-create-job]').value;
+        const messageEl = document.getElementById('dashboard-message');
+        
+        const response = await fetch(`${API_URL}/users`, {
+            method: 'POST',
+            body: JSON.stringify({ name, job })
+        });
+        const data = await response.json();
+        
+        messageEl.textContent = `User "${data.name}" dengan ID ${data.id} berhasil dibuat!`;
+        messageEl.className = 'message success';
+        fetchUsers(); // Refresh daftar user setelah membuat
+    }
+
+    async function handleDeleteUser(userId) {
+        const messageEl = document.getElementById('dashboard-message');
+        await fetch(`${API_URL}/users/${userId}`, { method: 'DELETE' });
+        
+        messageEl.textContent = `User dengan ID ${userId} berhasil dihapus!`;
+        messageEl.className = 'message success';
+        fetchUsers(); // Refresh daftar user setelah menghapus
+    }
+
+    function handleLogout() {
+        localStorage.removeItem('authToken');
+        document.getElementById('dashboard-view').classList.add('hidden');
+        document.getElementById('login-view').classList.remove('hidden');
+    }
+
+</script>
+</body>
+</html>
